@@ -127,8 +127,8 @@ open class ShoutView: UIView {
     open func configureView(_ announcement: Announcement) {
         self.announcement = announcement
         imageView.image = announcement.image
-        titleLabel.attributedText = announcement.title
-        subtitleLabel.attributedText = announcement.subtitle
+        titleLabel.text = announcement.title
+        subtitleLabel.text = announcement.subtitle
         
         displayTimer.invalidate()
         displayTimer = Timer.scheduledTimer(timeInterval: announcement.duration,
@@ -138,6 +138,7 @@ open class ShoutView: UIView {
     }
     
     open func shout(to controller: UIViewController) {
+        backgroundView.backgroundColor = announcement?.backgroundColor
         controller.view.addSubview(self)
         
         frame.size.height = 0

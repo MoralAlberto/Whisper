@@ -17,18 +17,19 @@ public struct Message {
 
 public struct Announcement {
     
-    public var title: NSAttributedString
-    public var subtitle: NSAttributedString?
+    public var title: String
+    public var subtitle: String?
     public var image: UIImage?
     public var duration: TimeInterval
     public var backgroundColor: UIColor?
     public var action: (() -> Void)?
     
-    public init(title: NSAttributedString, subtitle: NSAttributedString? = nil, image: UIImage? = nil, duration: TimeInterval = 2, action: (() -> Void)? = nil) {
+    public init(title: String, subtitle: String? = nil, image: UIImage? = nil, duration: TimeInterval = 2, backgroundColor: UIColor?, action: (() -> Void)? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.image = image
         self.duration = duration
+        self.backgroundColor = backgroundColor
         self.action = action
     }
 }
